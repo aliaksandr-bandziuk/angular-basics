@@ -1,5 +1,14 @@
-<h1>Hello Angular World!</h1>
+<div class="container">
+  <h1>Angular Components</h1>
 
-<app-post></app-post>
-<app-post></app-post>
-<app-post2></app-post2>
+<app-post-form></app-post-form>
+
+<hr>
+
+<app-post
+  *ngFor="let p of posts"
+  [post]="p"
+></app-post>
+
+</div>
+

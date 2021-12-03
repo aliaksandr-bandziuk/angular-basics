@@ -1,18 +1,20 @@
-import { PostComponent } from './post/post.component';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { Post2Component } from './post2/post2.component';
+import { PostFormComponent } from './post-form/post-form.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    PostFormComponent,
     PostComponent,
-    Post2Component
    ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
