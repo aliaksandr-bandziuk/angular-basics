@@ -1,3 +1,27 @@
 <div class="container">
   <h1>Angular Directives</h1>
+  <p appStyle="red" [dStyles]="{border: '1px solid green', borderRadius: '5px'}">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, deleniti?
+  </p>
+  <p appStyle="green" [dStyles]="{border: '1px solid red', borderRadius: '15px'}">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, deleniti?
+  </p>
+
+  <button class="btn" (click)="isVisible = !isVisible">Toggle</button>
+  <div *ngIf="isVisible" class="wrap">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis voluptates ullam velit, assumenda consequuntur labore maiores commodi odit deleniti? Accusamus.</p>
+  </div>
+
+  <!-- альтернативный вариант снизу -->
+  <ng-template [ngIf]="isVisible">
+    <div class="wrap">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis voluptates ullam velit, assumenda consequuntur labore maiores commodi odit deleniti? Accusamus.</p>
+    </div>
+  </ng-template>
+
+  <!-- еще один альтернативный способ -->
+  <!-- через создание структурной директивы -->
+  <div class="wrap" *appIfnot="!isVisible">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis voluptates ullam velit, assumenda consequuntur labore maiores commodi odit deleniti? Accusamus.</p>
+  </div>
 </div>
