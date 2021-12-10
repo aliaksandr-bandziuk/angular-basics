@@ -1,5 +1,8 @@
-<h1>Hello Angular World!</h1>
+<div class="container">
+  <h1>Angular Pipes Async</h1>
 
-<app-post></app-post>
-<app-post></app-post>
-<app-post2></app-post2>
+  <p>Wait for it...{{p | async}}</p>
+
+  <!-- как работают async pipes с observables -->
+  <p>Date: {{date | async | date: 'HH:mm:ss yyyy'}}</p>
+</div>
