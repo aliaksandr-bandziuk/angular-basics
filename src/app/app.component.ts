@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { interval, Subscription } from 'rxjs';
+import { map, filter } from 'rxjs/operators'
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-basics';
+
+  sub: Subscription
+
+  constructor() {
+    const intervalStream$ = interval(1000)
+
+    this.sub = intervalStream$
+      .pipe(
+        filter(value => value % 2 === 0),
+        map((value) => `Mapped value: ${value}`)
+      )
+      .subscribe((value) => {
+        console.log('value: ', value);
+    })
+  }
+
+  // останавливает стрим intervalStream$
+  stop() {
+    this.sub.unsubscribe()
+  }
+
+
 }
