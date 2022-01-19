@@ -1,0 +1,15 @@
+p {
+  font-size: 1.5rem;
+}
+
+// так обрабатывать цвета полей при вводе верного-неверного значения
+// эти классы предоставляет сам Angular
+// искать их надо в коде на фронте
+input {
+  &.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+  &.ng-valid.ng-touched {
+    border: 1px solid green;
+  }
+}
